@@ -1,0 +1,11 @@
+{
+  "name": "MMM-TerminalWeather",
+  "version": "1.0.0",
+  "description": "A MagicMirror module that emulates a terminal displaying weather data.",
+  "main": "MMM-TerminalWeather.js",
+  "scripts": {
+    "start": "node MMM-TerminalWeather.js"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

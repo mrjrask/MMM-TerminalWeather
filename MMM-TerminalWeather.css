@@ -1,0 +1,35 @@
+getDom: function () {
+  const wrapper = document.createElement("div");
+  wrapper.style.width = "max-content";
+  wrapper.style.height = "max-content";
+  wrapper.style.backgroundColor = "black";
+  wrapper.style.color = "green";
+  wrapper.style.fontFamily = "monospace";
+  wrapper.style.fontSize = "12px"; // Adjust for terminal-like appearance
+  wrapper.style.padding = "10px";
+  wrapper.style.overflow = "hidden";
+  wrapper.style.whiteSpace = "pre-wrap";
+  wrapper.innerHTML = this.output;
+
+  // Add CSS for blinking cursor
+  const style = document.createElement("style");
+  style.type = "text/css";
+  style.innerHTML = `
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .cursor {
+      display: inline-block;
+      background-color: green;
+      width: 8px;
+      height: 16px;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+  `;
+  document.head.appendChild(style);
+
+  return wrapper;
+},
