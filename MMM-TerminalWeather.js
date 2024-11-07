@@ -29,12 +29,16 @@ Module.register("MMM-TerminalWeather", {
 
   getDom: function () {
     const wrapper = document.createElement("div");
-    wrapper.style.backgroundColor = "black";
+    wrapper.style.width = "128ch"; // 128 characters wide
+    wrapper.style.height = "46em"; // 46 lines of text
+    wrapper.style.backgroundColor = "darkgray"; // Dark gray background for differentiation
     wrapper.style.color = "green";
     wrapper.style.fontFamily = "monospace";
     wrapper.style.fontSize = "12px"; // Adjust for terminal-like appearance
     wrapper.style.padding = "10px";
     wrapper.style.whiteSpace = "pre-wrap";
+    wrapper.style.overflow = "hidden";
+    wrapper.style.textAlign = "left"; // Left-justify the text
     wrapper.innerHTML = this.output;
     console.log("[MMM-TerminalWeather] Rendering DOM element.");
     return wrapper;
