@@ -29,9 +29,9 @@ Module.register("MMM-TerminalWeather", {
 
   getDom: function () {
     const wrapper = document.createElement("div");
-    wrapper.style.width = "128ch"; // 128 characters wide
-    wrapper.style.height = "46em"; // 46 lines of text
-    wrapper.style.backgroundColor = "darkgray"; // Dark gray background for differentiation
+    wrapper.style.width = "80vw"; // Adjust width to 80% of the viewport width
+    wrapper.style.height = "80vh"; // Adjust height to 80% of the viewport height
+    wrapper.style.backgroundColor = "black"; // Set background to black
     wrapper.style.color = "green";
     wrapper.style.fontFamily = "monospace";
     wrapper.style.fontSize = "12px"; // Adjust for terminal-like appearance
@@ -39,6 +39,13 @@ Module.register("MMM-TerminalWeather", {
     wrapper.style.whiteSpace = "pre-wrap";
     wrapper.style.overflow = "hidden";
     wrapper.style.textAlign = "left"; // Left-justify the text
+    wrapper.style.margin = "auto"; // Center the module
+    wrapper.style.border = "1px solid gray"; // Add a thin gray border
+    wrapper.style.display = "flex";
+    wrapper.style.justifyContent = "center";
+    wrapper.style.alignItems = "center";
+    wrapper.style.maxWidth = "126ch"; // Ensure width fits 126 characters
+    wrapper.style.maxHeight = "46em"; // Ensure height fits 46 lines
     wrapper.innerHTML = this.output;
     console.log("[MMM-TerminalWeather] Rendering DOM element.");
     return wrapper;
